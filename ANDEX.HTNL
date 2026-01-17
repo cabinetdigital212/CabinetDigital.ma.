@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CabinetDigital.ma | Expertise Comptable & IA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .step-number {
+            -webkit-text-stroke: 1px #004d8c;
+            color: transparent;
+            font-size: 4rem;
+            line-height: 1;
+        }
+        .feature-card:hover .step-number {
+            color: #004d8c;
+            -webkit-text-stroke: 0px;
+        }
+        /* تحسين مظهر اللوكو */
+        .logo-img {
+            max-height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo Integration -->
+                <div class="flex items-center gap-3">
+                    <img src="https://i.postimg.cc/zXcZkW6Y/1768674193662.png" alt="CabinetDigital.ma Logo" class="logo-img">
+                    <span class="text-xl font-extrabold tracking-tight text-[#004d8c] hidden sm:block">CabinetDigital.ma</span>
+                </div>
+
+                <div class="hidden md:flex space-x-8 font-semibold text-gray-600">
+                    <a href="#" class="hover:text-blue-700 transition">Accueil</a>
+                    <a href="#solutions" class="hover:text-blue-700 transition">Solutions</a>
+                    <a href="#" class="hover:text-blue-700 transition">À propos</a>
+                </div>
+                
+                <div class="flex items-center gap-4">
+                    <button class="hidden sm:block text-gray-600 font-bold hover:text-blue-700 transition">Connexion</button>
+                    <button class="bg-[#004d8c] text-white px-6 py-2.5 rounded-full font-bold hover:bg-blue-800 transition shadow-lg shadow-blue-100">
+                        Essai Gratuit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative py-20 overflow-hidden bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 bg-blue-50 px-4 py-2 rounded-full mb-8">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                </span>
+                <span class="text-blue-700 text-xs font-bold uppercase tracking-widest">Technologie IA au Maroc</span>
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6 tracking-tight leading-tight">
+                CabinetDigital.ma <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#004d8c] to-blue-500">
+                    La comptabilité augmentée
+                </span>
+            </h1>
+            
+            <p class="max-w-2xl mx-auto text-lg text-gray-500 mb-10 leading-relaxed">
+                Automatisez vos tâches comptables avec notre plateforme cloud sécurisée. 
+                Une solution marocaine innovante pour une gestion financière en temps réel.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#solutions" class="bg-[#004d8c] text-white px-10 py-4 rounded-2xl font-bold hover:scale-105 transition shadow-xl shadow-blue-100">
+                    Démarrer maintenant
+                </a>
+                <button class="bg-white border-2 border-gray-100 px-10 py-4 rounded-2xl font-bold hover:bg-gray-50 transition">
+                    Démo gratuite
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section (Steps) -->
+    <section id="solutions" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 tracking-tight">Nos services innovants</h2>
+                <p class="text-gray-500 font-medium">L'expertise de CabinetDigital.ma à votre service</p>
+                <div class="w-20 h-1.5 bg-[#004d8c] mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- 01 Saisie automatique -->
+                <div class="feature-card bg-white p-8 rounded-3xl shadow-sm border border-gray-100 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-4 bg-blue-50 text-[#004d8c] rounded-2xl">
+                            <i class="fas fa-brain text-2xl"></i>
+                        </div>
+                        <span class="step-number font-black italic opacity-20">01</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Saisie automatique</h3>
+                    <p class="text-gray-500 leading-relaxed text-sm">Capturez vos factures et relevés sans saisie manuelle grâce à notre IA.</p>
+                </div>
+
+                <!-- 02 Télédéclarations -->
+                <div class="feature-card bg-white p-8 rounded-3xl shadow-sm border border-gray-100 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-4 bg-indigo-50 text-indigo-600 rounded-2xl">
+                            <i class="fas fa-file-signature text-2xl"></i>
+                        </div>
+                        <span class="step-number font-black italic opacity-20">02</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 text-balance">Télédéclarations simplifiées</h3>
+                    <p class="text-gray-500 leading-relaxed text-sm">Générez vos déclarations fiscales en quelques clics en toute conformité.</p>
+                </div>
+
+                <!-- 03 GED -->
+                <div class="feature-card bg-white p-8 rounded-3xl shadow-sm border border-gray-100 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-4 bg-cyan-50 text-cyan-600 rounded-2xl">
+                            <i class="fas fa-folder-tree text-2xl"></i>
+                        </div>
+                        <span class="step-number font-black italic opacity-20">03</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Archivage GED</h3>
+                    <p class="text-gray-500 leading-relaxed text-sm">Sécurisez vos documents dans un espace cloud structuré et accessible.</p>
+                </div>
+
+                <!-- 04 Facturation -->
+                <div class="feature-card bg-white p-8 rounded-3xl shadow-sm border border-gray-100 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-4 bg-emerald-50 text-emerald-600 rounded-2xl">
+                            <i class="fas fa-file-invoice text-2xl"></i>
+                        </div>
+                        <span class="step-number font-black italic opacity-20">04</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Facturation intégrée</h3>
+                    <p class="text-gray-500 leading-relaxed text-sm">Gérez vos factures d'achat et de vente avec un suivi de paiement précis.</p>
+                </div>
+
+                <!-- 05 Suivi -->
+                <div class="feature-card bg-white p-8 rounded-3xl shadow-sm border border-gray-100 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-4 bg-orange-50 text-orange-600 rounded-2xl">
+                            <i class="fas fa-chart-bar text-2xl"></i>
+                        </div>
+                        <span class="step-number font-black italic opacity-20">05</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Tableau de bord</h3>
+                    <p class="text-gray-500 leading-relaxed text-sm">Visualisez vos indicateurs clés en temps réel pour une meilleure gestion.</p>
+                </div>
+
+                <!-- 06 Sécurité -->
+                <div class="feature-card bg-white p-8 rounded-3xl shadow-sm border border-gray-100 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-4 bg-rose-50 text-rose-600 rounded-2xl">
+                            <i class="fas fa-shield-check text-2xl"></i>
+                        </div>
+                        <span class="step-number font-black italic opacity-20">06</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Sécurité & Fraude</h3>
+                    <p class="text-gray-500 leading-relaxed text-sm">Contrôle intelligent pour détecter les anomalies et protéger vos données.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 py-16 px-4 text-white">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-3">
+                <!-- Footer Logo -->
+                <img src="https://i.postimg.cc/zXcZkW6Y/1768674193662.png" alt="CabinetDigital.ma Logo" class="h-10 brightness-0 invert">
+                <span class="text-xl font-bold tracking-tight">CabinetDigital.ma</span>
+            </div>
+            <div class="flex gap-6 text-gray-400">
+                <a href="#" class="hover:text-white transition">Mentions légales</a>
+                <a href="#" class="hover:text-white transition">Confidentialité</a>
+                <a href="#" class="hover:text-white transition">Contact</a>
+            </div>
+            <p class="text-gray-500 text-sm">© 2024 CabinetDigital.ma. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
