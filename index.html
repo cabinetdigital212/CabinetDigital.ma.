@@ -3,183 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CabinetDigital.ma | La Comptabilité Intelligente par l'IA</title>
+    <title>CabinetDigital.ma | Expert Comptable IA</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fcfdfe; }
-        .ai-gradient {
-            background: linear-gradient(135deg, #004d8c 0%, #0072bc 100%);
-        }
-        .feature-card {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid rgba(0, 77, 140, 0.05);
-        }
-        .feature-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 20px 40px rgba(0, 77, 140, 0.1);
-            border-color: rgba(0, 77, 140, 0.1);
-        }
-        .step-number {
-            font-size: 5rem;
-            font-weight: 900;
-            color: rgba(0, 77, 140, 0.05);
-            position: absolute;
-            top: -10px;
-            right: 10px;
-            line-height: 1;
-            transition: color 0.3s;
-        }
-        .feature-card:hover .step-number {
-            color: rgba(0, 77, 140, 0.08);
-        }
-        .glow {
-            box-shadow: 0 0 20px rgba(0, 114, 188, 0.3);
-        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
+        .ai-gradient { background: linear-gradient(135deg, #004d8c 0%, #0072bc 100%); }
+        .feature-card { transition: all 0.4s ease; border: 1px solid #f1f5f9; }
+        .feature-card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px -12px rgba(0, 77, 140, 0.15); border-color: #004d8c; }
+        .mobile-menu { transition: transform 0.3s ease-in-out; }
     </style>
 </head>
-<body class="antialiased">
+<body class="bg-[#fcfdfe] antialiased">
 
-    <!-- Header / Nav -->
-    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-100">
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex items-center gap-4">
-                    <img src="https://i.postimg.cc/zXcZkW6Y/1768674193662.png" alt="CabinetDigital.ma" class="h-12 w-auto">
-                    <span class="text-2xl font-extrabold text-[#004d8c] tracking-tight hidden lg:block">CabinetDigital.ma</span>
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3">
+                    <img src="https://i.postimg.cc/zXcZkW6Y/1768674193662.png" alt="Logo" class="h-10">
+                    <span class="text-xl font-bold text-[#004d8c] tracking-tight">CabinetDigital.ma</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#accueil" class="text-gray-600 hover:text-[#004d8c] font-semibold transition">Accueil</a>
+                    <a href="#features" class="text-gray-600 hover:text-[#004d8c] font-semibold transition">Fonctionnalités</a>
+                    <a href="#demo" class="text-gray-600 hover:text-[#004d8c] font-semibold transition">Démonstration</a>
+                    <a href="#contact" class="text-gray-600 hover:text-[#004d8c] font-semibold transition">Contact</a>
+                    <button class="bg-[#004d8c] text-white px-6 py-2.5 rounded-full font-bold hover:shadow-lg transition">Essai Gratuit</button>
                 </div>
-                <div class="hidden md:flex items-center space-x-8 font-semibold text-gray-600">
-                    <a href="#features" class="hover:text-[#004d8c] transition">Fonctionnalités</a>
-                    <a href="#solutions" class="hover:text-[#004d8c] transition">Solutions IA</a>
-                    <button class="bg-[#004d8c] text-white px-7 py-2.5 rounded-full hover:bg-[#003a6a] transition shadow-lg glow">
-                        Démarrer l'essai
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-[#004d8c] focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
                     </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Sidebar Menu -->
+        <div id="mobile-menu" class="fixed inset-y-0 left-0 w-64 bg-white shadow-2xl transform -translate-x-full mobile-menu md:hidden z-[60]">
+            <div class="p-6">
+                <img src="https://i.postimg.cc/zXcZkW6Y/1768674193662.png" class="h-8 mb-8">
+                <div class="flex flex-col space-y-6">
+                    <a href="#accueil" class="text-gray-800 font-bold text-lg" onclick="toggleMenu()">Accueil</a>
+                    <a href="#features" class="text-gray-800 font-bold text-lg" onclick="toggleMenu()">Fonctionnalités</a>
+                    <a href="#demo" class="text-gray-800 font-bold text-lg" onclick="toggleMenu()">Démonstration</a>
+                    <a href="#contact" class="text-gray-800 font-bold text-lg" onclick="toggleMenu()">Contact</a>
+                    <button class="bg-[#004d8c] text-white py-3 rounded-xl font-bold">Essai Gratuit</button>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative pt-20 pb-32 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-[#004d8c] text-sm font-bold mb-8 animate-bounce">
-                <i class="fas fa-sparkles"></i> 
-                L'IA AU SERVICE DE VOTRE CABINET
-            </div>
-            <h1 class="text-5xl md:text-7xl font-extrabold text-gray-900 mb-8 tracking-tight">
-                CabinetDigital.ma <br>
-                <span class="text-transparent bg-clip-text ai-gradient leading-relaxed">
-                    Comptabilité Augmentée par l'IA
-                </span>
+    <section id="accueil" class="pt-32 pb-20 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+                La Comptabilité <span class="text-[#004d8c]">Augmentée par l'IA</span><br>
+                au Maroc avec CabinetDigital.ma
             </h1>
-            <p class="text-xl text-gray-500 max-w-3xl mx-auto mb-12 leading-relaxed">
-                Automatisez vos tâches comptables, accédez à vos données en temps réel et restez conforme aux obligations fiscales - le tout <strong>100% cloud</strong>.
+            <p class="text-lg text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
+                Plus qu'un logiciel, une intelligence à vos côtés pour automatiser, sécuriser et propulser votre gestion comptable 100% Cloud.
             </p>
-            <div class="flex flex-col sm:flex-row gap-5 justify-center">
-                <button class="bg-[#004d8c] text-white px-10 py-5 rounded-2xl font-bold text-lg hover:scale-105 transition glow">
-                    Voir la Démo IA
-                </button>
-                <button class="bg-white border-2 border-gray-100 text-gray-900 px-10 py-5 rounded-2xl font-bold text-lg hover:bg-gray-50 transition">
-                    Contacter un expert
-                </button>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#features" class="bg-[#004d8c] text-white px-8 py-4 rounded-2xl font-bold text-lg hover:scale-105 transition">Découvrir les fonctions</a>
+                <a href="#contact" class="bg-white border-2 border-gray-100 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-gray-50 transition">Prendre RDV</a>
             </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="py-24 bg-white relative">
+    <section id="features" class="py-24 bg-white border-y border-gray-50">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-20">
-                <h2 class="text-3xl md:text-5xl font-extrabold text-gray-900 mb-6">Expérience Comptable Sans Précédent</h2>
-                <p class="text-gray-500 text-lg">Découvrez comment l'IA transforme vos processus métiers.</p>
-                <div class="w-24 h-1.5 ai-gradient mx-auto mt-8 rounded-full"></div>
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Fonctionnalités innovantes IA</h2>
+                <p class="text-gray-500">Optimisez chaque aspect de votre cabinet</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                
-                <!-- 01 Saisie Automatique -->
-                <div class="feature-card relative bg-white p-10 rounded-[2.5rem] overflow-hidden">
-                    <span class="step-number">01</span>
-                    <div class="w-16 h-16 ai-gradient rounded-2xl flex items-center justify-center text-white mb-8 shadow-xl">
-                        <i class="fas fa-microchip text-2xl"></i>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Saisie -->
+                <div class="feature-card p-8 rounded-[2rem] bg-gray-50">
+                    <div class="w-14 h-14 ai-gradient rounded-xl flex items-center justify-center text-white mb-6">
+                        <i class="fas fa-magic text-xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Saisie Automatique</h3>
-                    <p class="text-gray-600 leading-relaxed">Capturez automatiquement vos factures et relevés bancaires sans saisie manuelle grâce à notre moteur OCR intelligent.</p>
+                    <h3 class="text-xl font-bold mb-3">01. Saisie automatique</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Capturez automatiquement vos factures et relevés bancaires sans saisie manuelle.</p>
                 </div>
 
-                <!-- 02 Télédéclarations -->
-                <div class="feature-card relative bg-white p-10 rounded-[2.5rem] overflow-hidden">
-                    <span class="step-number">02</span>
-                    <div class="w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center text-white mb-8 shadow-xl">
-                        <i class="fas fa-paper-plane text-2xl"></i>
+                <!-- Télédéclarations -->
+                <div class="feature-card p-8 rounded-[2rem] bg-gray-50">
+                    <div class="w-14 h-14 bg-indigo-600 rounded-xl flex items-center justify-center text-white mb-6">
+                        <i class="fas fa-file-invoice-dollar text-xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4 text-balance">Télédéclarations Simplifiées</h3>
-                    <p class="text-gray-600 leading-relaxed">Générez et envoyez vos déclarations fiscales en quelques clics, directement depuis la plateforme en toute conformité.</p>
+                    <h3 class="text-xl font-bold mb-3">02. Télédéclarations</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Générez et envoyez vos déclarations fiscales en quelques clics depuis la plateforme.</p>
                 </div>
 
-                <!-- 03 GED -->
-                <div class="feature-card relative bg-white p-10 rounded-[2.5rem] overflow-hidden">
-                    <span class="step-number">03</span>
-                    <div class="w-16 h-16 bg-cyan-600 rounded-2xl flex items-center justify-center text-white mb-8 shadow-xl">
-                        <i class="fas fa-cloud-check text-2xl"></i>
+                <!-- GED -->
+                <div class="feature-card p-8 rounded-[2rem] bg-gray-50">
+                    <div class="w-14 h-14 bg-cyan-600 rounded-xl flex items-center justify-center text-white mb-6">
+                        <i class="fas fa-archive text-xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Archivage GED</h3>
-                    <p class="text-gray-600 leading-relaxed">Centralisez, classez et sécurisez tous vos documents comptables dans un espace cloud structuré et intelligent.</p>
+                    <h3 class="text-xl font-bold mb-3">03. Archivage GED</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Centralisez et sécurisez tous vos documents dans un espace cloud structuré.</p>
                 </div>
 
-                <!-- 04 Facturation -->
-                <div class="feature-card relative bg-white p-10 rounded-[2.5rem] overflow-hidden">
-                    <span class="step-number">04</span>
-                    <div class="w-16 h-16 bg-emerald-600 rounded-2xl flex items-center justify-center text-white mb-8 shadow-xl">
-                        <i class="fas fa-file-invoice-dollar text-2xl"></i>
+                <!-- Facturation -->
+                <div class="feature-card p-8 rounded-[2rem] bg-gray-50">
+                    <div class="w-14 h-14 bg-emerald-600 rounded-xl flex items-center justify-center text-white mb-6">
+                        <i class="fas fa-receipt text-xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Facturation Intégrée</h3>
-                    <p class="text-gray-600 leading-relaxed">Créez, envoyez et suivez vos factures achat avec une conformité légale assurée et un rapprochement automatique.</p>
+                    <h3 class="text-xl font-bold mb-3">04. Facturation intégrée</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Créez et suivez vos factures achat avec conformité légale assurée.</p>
                 </div>
 
-                <!-- 05 Suivi & Alertes -->
-                <div class="feature-card relative bg-white p-10 rounded-[2.5rem] overflow-hidden">
-                    <span class="step-number">05</span>
-                    <div class="w-16 h-16 bg-orange-600 rounded-2xl flex items-center justify-center text-white mb-8 shadow-xl">
-                        <i class="fas fa-bolt text-2xl"></i>
+                <!-- Suivi -->
+                <div class="feature-card p-8 rounded-[2rem] bg-gray-50">
+                    <div class="w-14 h-14 bg-orange-600 rounded-xl flex items-center justify-center text-white mb-6">
+                        <i class="fas fa-chart-line text-xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4 text-balance">Suivi Temps Réel & Alertes</h3>
-                    <p class="text-gray-600 leading-relaxed">Visualisez vos indicateurs comptables à tout moment avec des alertes automatiques sur les actions critiques.</p>
+                    <h3 class="text-xl font-bold mb-3">05. Suivi en temps réel</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Visualisez vos indicateurs à tout moment avec des alertes automatiques.</p>
                 </div>
 
-                <!-- 06 Détection Fraudes -->
-                <div class="feature-card relative bg-white p-10 rounded-[2.5rem] overflow-hidden">
-                    <span class="step-number">06</span>
-                    <div class="w-16 h-16 bg-rose-600 rounded-2xl flex items-center justify-center text-white mb-8 shadow-xl">
-                        <i class="fas fa-shield-virus text-2xl"></i>
+                <!-- Erreurs -->
+                <div class="feature-card p-8 rounded-[2rem] bg-gray-50">
+                    <div class="w-14 h-14 bg-rose-600 rounded-xl flex items-center justify-center text-white mb-6">
+                        <i class="fas fa-shield-virus text-xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4 text-balance">Détection Erreurs & Fraudes</h3>
-                    <p class="text-gray-600 leading-relaxed">Identifiez les incohérences et anomalies grâce à un moteur intelligent de vérification automatique 24/7.</p>
+                    <h3 class="text-xl font-bold mb-3">06. Détection d'erreurs</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Identifiez les incohérences grâce à un moteur intelligent de vérification.</p>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- IA Call to Action -->
-    <section class="py-20 px-4">
-        <div class="max-w-5xl mx-auto ai-gradient rounded-[3rem] p-12 md:p-20 text-center text-white glow">
-            <h2 class="text-3xl md:text-5xl font-bold mb-8">Prêt à transformer votre cabinet ?</h2>
-            <p class="text-blue-100 text-lg mb-10 max-w-2xl mx-auto">Rejoignez la révolution CabinetDigital.ma et offrez à vos clients une expertise augmentée par la technologie.</p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <button class="bg-white text-[#004d8c] px-12 py-4 rounded-2xl font-extrabold hover:bg-blue-50 transition">Commencer gratuitement</button>
+    <!-- Demo/Dashboard Preview Section -->
+    <section id="demo" class="py-24 bg-[#f8fafc]">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-12 text-[#004d8c]">Votre futur Tableau de Bord</h2>
+            <div class="bg-white p-2 rounded-2xl shadow-2xl border-4 border-[#004d8c]/10">
+                <img src="https://i.postimg.cc/5tN133S5/dashboard-preview.png" alt="Demo" class="rounded-xl w-full" onerror="this.src='https://via.placeholder.com/1200x600?text=Aperçu+du+Tableau+de+Bord+Interactif'">
             </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-white px-4">
+        <div class="max-w-4xl mx-auto bg-gray-50 p-10 rounded-[2.5rem] border border-gray-100">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold">Contactez CabinetDigital.ma</h2>
+                <p class="text-gray-500 mt-2">Prêt pour la révolution numérique ?</p>
+            </div>
+            <form class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <input type="text" placeholder="Nom complet" class="p-4 rounded-xl border border-gray-200 outline-none focus:border-[#004d8c]">
+                    <input type="email" placeholder="Email professionnel" class="p-4 rounded-xl border border-gray-200 outline-none focus:border-[#004d8c]">
+                </div>
+                <textarea rows="4" placeholder="Votre message" class="w-full p-4 rounded-xl border border-gray-200 outline-none focus:border-[#004d8c]"></textarea>
+                <button type="submit" class="w-full bg-[#004d8c] text-white py-4 rounded-xl font-bold text-lg hover:shadow-xl transition">Envoyer ma demande</button>
+            </form>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 py-12">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <img src="https://i.postimg.cc/zXcZkW6Y/1768674193662.png" alt="Logo" class="h-10 mx-auto mb-6 brightness-0 invert">
-            <p class="text-slate-400">© 2024 CabinetDigital.ma - L'excellence comptable à l'ère de l'intelligence artificielle.</p>
-        </div>
+    <footer class="bg-slate-900 py-12 text-center text-white">
+        <img src="https://i.postimg.cc/zXcZkW6Y/1768674193662.png" class="h-10 mx-auto mb-4 brightness-0 invert">
+        <p class="text-gray-400">© 2024 CabinetDigital.ma | Expertise Comptable Marocaine au format Digital</p>
     </footer>
+
+    <!-- JavaScript to make it "Work" -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('-translate-x-full');
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+
+        // Smooth scroll for anchors
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
